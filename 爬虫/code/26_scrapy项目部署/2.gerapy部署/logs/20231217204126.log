@@ -1,0 +1,326 @@
+INFO - 2023-12-17 20:41:28,230 - process: 13123 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+ERROR - 2023-12-17 20:42:36,987 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 73, in index_status
+    files = os.listdir(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+ERROR - 2023-12-17 20:50:49,109 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d1a90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1053d1a90>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d1a90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 690, in job_list
+    result = scrapyd.list_jobs(project_name)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/wrapper.py", line 139, in list_jobs
+    jobs = self.client.get(url, params=params, timeout=self.timeout)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/client.py", line 37, in request
+    response = super(Client, self).request(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d1a90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ERROR - 2023-12-17 20:50:50,788 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /cancel.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d54f0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1053d54f0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /cancel.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d54f0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 747, in job_cancel
+    result = scrapyd.cancel(project_name, job_id)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/wrapper.py", line 92, in cancel
+    json = self.client.post(url, data=data, timeout=self.timeout)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/client.py", line 37, in request
+    response = super(Client, self).request(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /cancel.json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1053d54f0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ERROR - 2023-12-17 20:50:54,892 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105409c70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x105409c70>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105409c70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 690, in job_list
+    result = scrapyd.list_jobs(project_name)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/wrapper.py", line 139, in list_jobs
+    jobs = self.client.get(url, params=params, timeout=self.timeout)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/scrapyd_api/client.py", line 37, in request
+    response = super(Client, self).request(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='192.168.70.82', port=6800): Max retries exceeded with url: /listjobs.json?project=dangdang_book (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105409c70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ERROR - 2023-12-17 20:51:11,326 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 242, in project_index
+    files = os.listdir(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+ERROR - 2023-12-17 20:54:10,373 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 242, in project_index
+    files = os.listdir(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+ERROR - 2023-12-17 20:54:13,656 - process: 13123 - utils.py - gerapy.server.core.utils - 564 - utils - [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+Traceback (most recent call last):
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/poppies/venv/spider_base/lib/python3.9/site-packages/gerapy/server/core/views.py", line 242, in project_index
+    files = os.listdir(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects'
+INFO - 2023-12-17 21:00:52,871 - process: 13123 - build.py - gerapy.server.core.build - 24 - build - successfully build project jc_info to egg file /Users/poppies/Documents/spider_code/2023_10_17_基础爬虫代码/2023_12_17_scrapy项目部署/2.gerapy部署/projects/jc_info/jc_info-1.0-py3.9.egg
