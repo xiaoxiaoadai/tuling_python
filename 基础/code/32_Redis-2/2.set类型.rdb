@@ -1,0 +1,14 @@
+-- set类型的增删改查
+-- 创建set集合
+-- sadd set_key_name member_1 member_2 ...
+sadd user_name_1 zhangsan lisi wangwu
+
+-- 获取集合中的所有元素
+-- smembers key_name
+smembers user_name_1
+
+-- 删除集合元素
+-- srem set_key_name value
+srem user_name_1 wangwu
+-- 删除整个集合
+del user_name_1

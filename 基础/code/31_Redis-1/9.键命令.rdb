@@ -1,0 +1,18 @@
+-- 查询当前数据仓库中的所有的key
+keys *
+
+-- 查询首字母为s的key: 可以简单理解为模糊查询
+keys s*
+
+-- 判断指定的key是否存在于数据仓库中
+exists address
+
+-- 查询指定的key中对应的value的类型
+type stu_name
+-- 数字类型在redis中也是一种字符串,在python中华获取数字类型需要转为int/float
+type age
+
+-- 删除一个键值对
+del age
+-- 删除多个键值对
+del stu_name name gender

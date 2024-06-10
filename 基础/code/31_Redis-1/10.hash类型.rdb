@@ -1,0 +1,22 @@
+-- 保存hash: hset key filed value
+hset user_info name tuling
+
+-- 获取指定hash
+hget user_info name
+
+-- 设置多个filed/value
+hmset stu_info name 安娜 age 18 address 长沙
+-- 获取多个指定的filed对应的value
+hmget stu_info name age address
+
+-- 获取hash中所有的数据
+hvals stu_info
+
+-- 获取hash中所有的field
+hkeys stu_info
+
+-- 删除hash中指定的field
+hdel stu_info address age
+
+-- 删除整个hash
+del stu_info

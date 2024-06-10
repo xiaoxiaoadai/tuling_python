@@ -1,0 +1,22 @@
+-- 字符串操作
+-- set key value
+set name tuling
+get name
+set stu_name 安娜
+get stu_name
+
+-- 批量保存str: 一次设置多个key, key不能重复
+mset stu_name 木木 age 18 gender 女
+-- 设置的value会覆盖之前的value
+get stu_name
+
+-- 如何查询当前数据库中的所有的key
+keys *
+
+-- 批量获取多个key中的value
+mget age stu_name name gender
+
+-- 总结: set设置key/value get获取value mset设置多个key/value mget获取多个value
+
+-- 设置过期时间: 数字3的单位是秒
+setex name 3 安娜

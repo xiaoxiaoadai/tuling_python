@@ -1,0 +1,23 @@
+-- 列表左插入
+-- lpush key value1 value2 ...
+lpush name_1 a b c
+
+-- 在列表中获取值只有左迭代
+lrange name_1 0 -1
+
+-- 列表右插入以及获取列表元素
+rpush name_2 a b c
+lrange name_2 0 -1
+
+-- 在列表删除指定元素
+-- 在列表删除中的单词首字母l代表的是list
+-- lrem key count value
+lpush test_list a b a b a b
+lrange test_list 0 -1
+
+-- count > 0: 从左到右删除
+-- count < 0: 从右到左删除
+-- count == 0: 删除所有指定元素
+
+lrem test_list -2 b
+lrange test_list 0 -1
